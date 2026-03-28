@@ -4,7 +4,6 @@ import os
 from typing import List, Optional
 from dataclasses import dataclass
 from pathlib import Path
-import weasyprint
 from groq import Groq
 
 
@@ -161,18 +160,7 @@ class AdvancedCVBuilder:
         """
 
     # -------- EXPORT --------
-    def export_pdf(self, html, filename):
-        path = Path(filename).with_suffix(".pdf")
-        weasyprint.HTML(string=html).write_pdf(str(path))
-        print(f"✅ PDF saved: {path}")
-
-    def export_html(self, html, filename):
-        path = Path(filename).with_suffix(".html")
-        with open(path, "w") as f:
-            f.write(html)
-        print(f"✅ HTML saved: {path}")
-
-
+ 
 # ---------------- MAIN FUNCTION ----------------
 def main():
     print("🎯 AI CV BUILDER\n")
