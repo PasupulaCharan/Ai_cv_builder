@@ -50,8 +50,7 @@ if st.button("Generate CV 🚀"):
     # Save files
     with open("resume.html", "w") as f:
         f.write(html)
-
-    builder.export_pdf(html, "resume")
+    st.download_button("📄 Download Resume (HTML)", html, file_name="resume.html")
 
     st.success("✅ CV Generated!")
 
